@@ -23,14 +23,6 @@ I needed this for a project, so I extended the [official TreeTable sample](https
 
 ---
 
-## 📂 Project Structure
-├── .gitignore
-├── LICENSE
-└── README.md
-
-
----
-
 ## ▶️ Run Locally
 1. Clone this repo:
    ```bash
