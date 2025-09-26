@@ -1,0 +1,26 @@
+name: Deploy UI5 app to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout the repo
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      # 2️⃣ Deploy webapp folder to "web" branch root
+      - name: Deploy UI5 app to web
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./webapp       # Deploy this folder
+          publish_branch: web         # Root of the "web" branch
+          force_orphan: true          # Clears branch and creates orphan commit
