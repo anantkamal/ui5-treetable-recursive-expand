@@ -20,7 +20,7 @@ jobs:
       - name: Deploy UI5 app to web
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAT }}
           publish_dir: ./webapp       # Deploy this folder
           publish_branch: web         # Root of the "web" branch
           force_orphan: true          # Clears branch and creates orphan commit
